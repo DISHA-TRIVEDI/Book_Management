@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Recommender System</title>
+</head>
+<body>
+   <nav class="navbar">
+     <span>BOOK RECOMMENDER</span>
+   </nav> 
+
+<form class="input" action="/recommend_books" method="post">
+   <input name="user_input" type="text" >
+   <button type="submit">Search</button>
+</form>
+
+{% if data %}
+{% for i in data %}
+<div class="books">
+  <img src="{{i[2]}}" style="align-items: center">
+  <h3>{{i[0]}}</h3>
+  <h3>- {{i[1]}}</h3>
+
+</div>
+{% endfor %}
+{%endif%}
+   
+   
+</body>
+<style>
+  *{
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+body{
+  background-color: rgb(43, 37, 37);
+    
+}
+nav{
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,0,0,1));
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;   
+}
+
+.heading{
+  font-size: 40px;
+  margin: 40px;
+  text-align: center;
+}
+.books{
+  margin: 40px;
+  display: inline-block;
+  margin-left: 70px;
+  width: 23%;
+  max-height: 10px;
+  box-sizing: border-box;
+}
+.books p{
+ font-size: smaller;
+}
+.input{
+  margin: 30px;
+  margin-top:50px;
+  margin-left: 15%;
+} 
+.input input{
+  width: 70%;
+  font-size: 25px;
+  margin-right: 25px;
+  background-color: grey;
+  padding: 5px;
+  border-radius: 7px;
+}
+.input button{
+  font-size: 25px;
+  background-color:rgb(241, 220, 22);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 7px;
+}
+</style>
+</html>

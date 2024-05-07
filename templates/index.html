@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Recommender System</title>
+</head>
+<body >
+   <nav class="navbar">
+     <span>BOOK RECOMMENDER</span>
+      <a  href="/">HOME</a></li>
+        <a href="/recommend">RECOMMEND</a></li>
+   </nav> 
+   <div class="heading"> Top 50 Books</div>
+
+   {% for index in range(book_name|length) %}
+   <div class="books">
+      <img src="{{ image[index] }}" style="align-items: center">
+      <h3>{{ book_name[index] }}</h3>
+      <h3>{{ author[index] }}</h3>
+      <h3>{{ publisher[index] }}</h3>
+      <h4>Votes: {{ votes[index] }}</h4>
+      <h4>Ratings: {{ rating[index]|round(2) }}</h4>
+   </div>
+{% endfor %}
+
+   
+</body>
+<style>
+  *{
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+body{
+    background-color: rgb(54, 50, 50);
+    
+}
+nav{
+  background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(25, 163, 226));
+    font-size: 50px;
+    text-align: justify;
+    padding: 20px;  
+}  
+nav a{
+  font-size: 20px;
+  padding-left: 100px;
+  
+}
+nav span{
+  padding-right: 20%;
+  padding-left: 40px;
+  top: 0;
+
+}
+
+.heading{
+  font-size: 40px;
+  margin: 40px;
+  text-align: center;
+}
+.books{
+  margin: 40px;
+  display: inline-block;
+  margin-left: 70px;
+  width: 23%;
+  max-height: 10px;
+  box-sizing: border-box;
+}
+.books p{
+ font-size: smaller;
+}
+</style>
+<script>
+  let round_num= document.querySelector('h4')
+
+</script>
+</html>
